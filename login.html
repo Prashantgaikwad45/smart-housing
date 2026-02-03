@@ -2,18 +2,38 @@
 <html>
 <head>
   <title>Admin Login</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Admin Login</h2>
 
-  <input type="text" id="username" placeholder="Username"><br><br>
-  <input type="password" id="password" placeholder="Password"><br><br>
+<h2>Admin Login</h2>
 
-  <button onclick="login()">Login</button>
+<form onsubmit="login(event)">
+  <label>Username:</label><br>
+  <input type="text" id="username" required><br><br>
 
-  <p id="msg"></p>
+  <label>Password:</label><br>
+  <input type="password" id="password" required><br><br>
 
-  <script src="script.js"></script>
+  <button type="submit">Login</button>
+</form>
+
+<p id="msg" style="color:red;"></p>
+
+<script>
+function login(event) {
+  event.preventDefault(); // VERY IMPORTANT
+
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+
+  if (username === "admin" && password === "1234") {
+    localStorage.setItem("isAdmin", "true");
+    window.location.href = "admin.html"; // must exist
+  } else {
+    document.getElementById("msg").innerText = "Wrong username or password";
+  }
+}
+</script>
+
 </body>
 </html>
