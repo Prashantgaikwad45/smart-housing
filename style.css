@@ -1,0 +1,19 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background-color: #e6f7ff;
+}
+
+h1, h2 {
+  color: darkblue;
+}
+
+input, select, button {
+  padding: 8px;
+  margin: 5px;
+}
+
+table {
+  margin: auto;
+  background: white;
+}
